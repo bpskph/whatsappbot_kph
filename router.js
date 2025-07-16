@@ -64,6 +64,19 @@ router.keyword("2339", [BotController, "mdgs"]);
 router.keyword("23310", [BotController, "berkelanjutan"]);
 router.keyword("23311", [BotController, "kewirausahaan"]);
 
+// FAQ (Pertanyaan yang Sering Diajukan)
+router.keyword("51", [BotController, "faqApaItuBps"]);
+router.keyword("52", [BotController, "faqLayananBps"]);
+router.keyword("53", [BotController, "faqAksesData"]);
+router.keyword("54", [BotController, "faqBiayaData"]);
+router.keyword("55", [BotController, "faqKepahiangDalamAngka"]);
+router.keyword("56", [BotController, "faqPerbedaanSensus"]);
+router.keyword("57", [BotController, "faqPerbedaanData"]);
+router.keyword("58", [BotController, "faqTidakMenemukanData"]);
+router.keyword("59", [BotController, "faqPenggunaanData"]);
+router.keyword("510", [BotController, "faqLowonganMagang"]);
+router.keyword("511", [BotController, "faqKonsultasi"]);
+
 // Menu lain
 router.keyword("Buat Janji", [BotController, "hubungiPetugas2"]);
 router.keyword("Tanya PeTik", [BotController, "hubungiPetugas"]);
