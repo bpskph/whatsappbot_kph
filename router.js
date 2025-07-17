@@ -65,8 +65,8 @@ router.keyword("23310", [BotController, "berkelanjutan"]);
 router.keyword("23311", [BotController, "kewirausahaan"]);
 
 // FAQ (Pertanyaan yang Sering Diajukan)
-router.keyword("51", [BotController, "faqApaItuBps"]);
-router.keyword("52", [BotController, "faqLayananBps"]);
+router.keyword("51", [BotController, "faqApaItuBPS"]);
+router.keyword("52", [BotController, "faqLayananBPS"]);
 router.keyword("53", [BotController, "faqAksesData"]);
 router.keyword("54", [BotController, "faqBiayaData"]);
 router.keyword("55", [BotController, "faqKepahiangDalamAngka"]);
