@@ -107,11 +107,15 @@ Ketik *8* untuk menutup sesi layanan.`);
   }
 
   async datasatistik(request) {
+    const user = request.from;
+    if (allowedSessions.has(user)) return;
     const submenu = [f("menu.statistikSosial"), f("menu.statistikEkonomi"), f("menu.statistikLingkungan")];
     return this.replyWithFooter(`📊 *Data Statistik Berdasarkan Kategori*\n\nSilakan pilih kategori dengan mengetik sesuai menu yang tersedia.\nContoh : *221*\n\n${submenu.map((m, i) => `*22${i + 1}*. ${m}`).join("\n")}`);
   }
 
   async statistikSosial(request) {
+    const user = request.from;
+    if (allowedSessions.has(user)) return;
   const submenu = [
     "Kependudukan dan Migrasi",
     "Tenaga Kerja",
@@ -423,6 +427,8 @@ Ketik *8* untuk menutup sesi layanan.`
 
 
   async statistikEkonomi(request) {
+    const user = request.from;
+    if (allowedSessions.has(user)) return;
   const submenu = [
     "Statistik Makroekonomi",
     "Neraca Ekonomi",
@@ -841,6 +847,8 @@ Ketik *8* untuk menutup sesi layanan.`
 
 
   async statistikLingkungan(request) {
+    const user = request.from;
+    if (allowedSessions.has(user)) return;
   const submenu = [
     "Lingkungan",
     "Statistik Regional & Area Kecil",
