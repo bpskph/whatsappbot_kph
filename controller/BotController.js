@@ -77,11 +77,6 @@ Jam Pelayanan : 08.00-15.00 WIB
   const number = request.number;
   if (allowedSessions.has(user)) return;
 
-  await logToSheet({
-    name,
-    number,
-    menu: "Layanan Perpustakaan"
-  });
     const daftarSubmenu = [f("menu.publikasi"), f("menu.datasatistik")];
     return this.replyWithFooter(`📚 *Layanan Perpustakaan BPS Kabupaten Kepahiang*\n\nSilakan pilih layanan dengan mengetik sesuai menu yang tersedia.\nContoh : *21*\n\n${daftarSubmenu.map((m, i) => `*${21 + i}*. ${m}`).join("\n")}
     `)}
@@ -93,11 +88,11 @@ Jam Pelayanan : 08.00-15.00 WIB
 
 Berikut beberapa publikasi terbaru yang paling sering diakses:
 
-1. Kabupaten Kepahiang Dalam Angka 2025
+*1.* Kabupaten Kepahiang Dalam Angka 2025
 🔗 https://s.bps.go.id/KepahiangDalamAngka2025
-2. Indeks Pembangunan Manusia 2023
+*2.* Indeks Pembangunan Manusia 2023
 🔗 https://s.bps.go.id/IPMKepahiang2025
-3. Indikator Strategis Kabupaten Kepahiang 2023
+*3.* Indikator Strategis Kabupaten Kepahiang 2023
 🔗 https://s.bps.go.id/IndikatorStartegisKepahiang2023
 
 Lihat semua publikasi dan unduh versi lengkapnya di:
@@ -141,6 +136,16 @@ Ketik 22 untuk kembali ke daftar kategori Data Statistik.`
 }
 
 async sosialKependudukan(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `👨‍👩‍👧 *Statistik Kependudukan dan Migrasi*
 
@@ -157,6 +162,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async sosialTenagaKerja(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `💼 *Statistik Tenaga Kerja*
 
@@ -173,6 +188,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async sosialPendidikan(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `🎓 *Statistik Pendidikan*
 
@@ -189,6 +214,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async sosialKesehatan(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `🏥 *Statistik Kesehatan*
 
@@ -205,6 +240,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async sosialKonsumsi(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `🛒 *Statistik Konsumsi dan Pendapatan*
 
@@ -221,6 +266,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async sosialPerlindungan(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `🤝 *Statistik Perlindungan Sosial*
 
@@ -237,6 +292,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async sosialPemukiman(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `🏘 *Statistik Pemukiman dan Perumahan*
 
@@ -253,6 +318,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async sosialKriminal(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `⚖️ *Statistik Hukum dan Kriminal*
 
@@ -269,6 +344,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async sosialBudaya(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `🎭 *Statistik Budaya*
 
@@ -285,6 +370,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async sosialPolitik(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `🗳 *Statistik Politik dan Komunitas*
 
@@ -301,6 +396,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async sosialWaktu(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `⏱ *Statistik Penggunaan Waktu*
 
@@ -345,6 +450,16 @@ Ketik 22 untuk kembali ke daftar kategori Data Statistik.`);
 }
 
 async ekonomiMakro(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `📈 *Statistik Ekonomi Makro*
 
@@ -361,6 +476,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async ekonomiNeraca(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `📊 *Statistik Neraca dan Produk Domestik Regional Bruto (PDRB)*
 
@@ -377,6 +502,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async ekonomiBisnis(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `🏢 *Statistik Usaha dan Bisnis*
 
@@ -393,6 +528,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async ekonomiSektoral(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `🏭 *Statistik Sektoral Ekonomi*
 
@@ -409,6 +554,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async ekonomiKeuanganPublik(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `💰 *Statistik Keuangan Publik*
 
@@ -425,6 +580,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async ekonomiPerdagangan(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `🛍 *Statistik Perdagangan*
 
@@ -441,6 +606,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async ekonomiHarga(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `💹 *Statistik Harga dan Inflasi*
 
@@ -457,6 +632,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async ekonomiTenagaKerja(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `👷‍♂️ *Statistik Ekonomi Tenaga Kerja*
 
@@ -473,6 +658,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async ekonomiIptek(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `🔬 *Statistik Ekonomi Ilmu Pengetahuan dan Teknologi*
 
@@ -489,6 +684,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async ekonomiPertanian(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `🌾 *Statistik Ekonomi Pertanian*
 
@@ -505,6 +710,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async ekonomiEnergi(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `⚡ *Statistik Ekonomi Energi*
 
@@ -521,6 +736,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async ekonomiIndustri(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `🏭 *Statistik Industri*
 
@@ -537,6 +762,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async ekonomiTransportasi(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `🚚 *Statistik Transportasi*
 
@@ -553,6 +788,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async ekonomiPariwisata(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `🌴 *Statistik Pariwisata*
 
@@ -569,6 +814,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async ekonomiFinansial(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `🏦 *Statistik Finansial dan Perbankan*
 
@@ -608,6 +863,16 @@ Ketik 22 untuk kembali ke daftar kategori Data Statistik.`);
 }
 
 async lingkungan(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `🌿 *Statistik Lingkungan Hidup*
 
@@ -624,6 +889,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async regionalAreaKecil(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `🗺 *Statistik Wilayah dan Area Kecil*
 
@@ -640,6 +915,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async multiDomain(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `📚 *Statistik Multidomain dan Integratif*
 
@@ -656,6 +941,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async bukuTahunan(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `📖 *Buku Tahunan Statistik*
 
@@ -672,6 +967,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async kemiskinanLintasSektor(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `🤝 *Statistik Kemiskinan Lintas Sektor*
 
@@ -688,6 +993,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async genderKhusus(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `🚺 *Statistik Gender dan Kelompok Khusus*
 
@@ -704,6 +1019,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async masyarakatInformasi(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `📱 *Statistik Masyarakat Informasi*
 
@@ -720,6 +1045,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async globalisasi(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `🌐 *Statistik Globalisasi*
 
@@ -736,6 +1071,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async mdgs(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `📌 *Statistik Tujuan Pembangunan Milenium (MDGs)*
 
@@ -752,6 +1097,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async berkelanjutan(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `🌱 *Statistik Tujuan Pembangunan Berkelanjutan (TPB/SDGs)*
 
@@ -768,6 +1123,16 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async kewirausahaan(request) {
+  const user = request.from;
+  const name = request.name;
+  const number = request.number;
+  if (allowedSessions.has(user)) return;
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Perpustakaan"
+  });
   return this.replyWithFooter(
     `🚀 *Statistik Kewirausahaan*
 
@@ -1180,7 +1545,8 @@ Sampai jumpa di layanan berikutnya!`);
     const userNumber = request.number;
     const userName = request.name;
     const petugasNumber = "62895413640333"; // Tanpa @c.us, pepesan handle otomatis
-
+  const user = request.from;
+  if (allowedSessions.has(user)) return;
     console.log("[HUBUNGI PETUGAS] Permintaan dari:", userNumber);
 
     // 1. Balas ke user
@@ -1195,7 +1561,7 @@ Mohon tunggu sebentar, Sahabat Data sedang dihubungkan dengan petugas statistik 
   📱 Nomor : ${userNumber}
   
   Pengguna memerlukan bantuan terkait statistik melalui *Tikko*.
-  Mohon segera ditindaklanjuti melalui WA Web.`
+  Mohon segera ditindaklanjuti melalui *Tikko*.`
       ]);
       console.log("[HUBUNGI PETUGAS] Notifikasi berhasil dikirim.");
     } catch (err) {
@@ -1211,7 +1577,8 @@ Mohon tunggu sebentar, Sahabat Data sedang dihubungkan dengan petugas statistik 
     const userNumber = request.number;
     const userName = request.name;
     const petugasNumber = "62895366006564"; // Tanpa @c.us, pepesan handle otomatis
-
+const user = request.from;
+  if (allowedSessions.has(user)) return;
     console.log("[HUBUNGI PETUGAS] Permintaan dari:", userNumber);
 
     // 1. Balas ke user
@@ -1234,7 +1601,7 @@ Silakan balas dengan format lengkap agar kami dapat menjadwalkan janji temu Anda
   📱 Nomor : ${userNumber}
   
   Pengguna mengajukan janji temu melalui *Tikko*.,
-  Mohon bantu konfirmasi waktu dan keperluan layanan melalui WA Web.`
+  Mohon bantu konfirmasi waktu dan keperluan layanan melalui *Tikko*.`
       ]);
       console.log("[HUBUNGI PETUGAS] Notifikasi berhasil dikirim.");
     } catch (err) {
@@ -1245,7 +1612,7 @@ Silakan balas dengan format lengkap agar kami dapat menjadwalkan janji temu Anda
     allowedSessions.add(request.from);
     console.log("[HUBUNGI PETUGAS] Sesi aktif sekarang:", [...allowedSessions]);
 
-    return "Kamu telah terhubung ke petugas.";
+
   }
 
 
@@ -1264,12 +1631,12 @@ Terima kasih, *Sahabat Data*, atas percakapannya bersama PeTik (Petugas Statisti
 Untuk membantu kami meningkatkan kualitas layanan dan penyediaan data, mohon luangkan waktu untuk mengisi *Survei Kebutuhan Data* melalui tautan berikut:
 🔗 https://s.bps.go.id/SKD2025_1708
 
-Tikko kini kembali ke mode auto-reply dan siap membantu kebutuhan statistik Anda berikutnya.`;
+Tikko kini kembali ke mode auto-reply dan siap membantu kebutuhan statistik Sahabat Data berikutnya.`;
 
   } else {
     return `ℹ️ *Saat ini tidak ada sesi konsultasi yang aktif.*
 
-Tikko sudah kembali ke mode auto-reply dan siap membantu kebutuhan statistik Anda berikutnya.`;
+Tikko sudah kembali ke mode auto-reply dan siap membantu kebutuhan statistik Sahabat Data.`;
   }
 }
 
@@ -1285,12 +1652,12 @@ async selesai2(request) {
 
 Terima kasih, *Sahabat Data*, atas waktunya untuk berkoordinasi bersama PeTik (Petugas Statistik).
 
-Tikko kini kembali ke mode auto-reply dan siap membantu keperluan statistik Anda berikutnya.`;
+Tikko kini kembali ke mode auto-reply dan siap membantu keperluan statistik Sahabat Data berikutnya.`;
 
   } else {
     return `ℹ️ *Saat ini tidak ada sesi koordinasi janji temu yang aktif.*
 
-Tikko sudah kembali ke mode auto-reply dan siap membantu kebutuhan statistik Anda berikutnya.`;
+Tikko sudah dalam mode auto-reply dan siap membantu kebutuhan statistik Sahabat Data.`;
   }
 }
 
