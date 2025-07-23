@@ -24,7 +24,7 @@ module.exports = class BotController extends Controller {
   }
 
   async introduction(request) {
-    const user = request.from;
+    const user = request.number;
     console.log("[INTRODUCTION] From:", user);
 
     if (allowedSessions.has(user)) return;
@@ -54,7 +54,7 @@ module.exports = class BotController extends Controller {
   }
 
   async tentangBPS(request) {
-  const user = request.from;
+  const user = request.number;
   if (allowedSessions.has(user)) return;
 
   return this.replyWithFooter(`🏢 *Tentang BPS Kabupaten Kepahiang*
@@ -73,7 +73,7 @@ Jam Pelayanan : 08.00-15.00 WIB
 
 
   async perpustakaan(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -108,14 +108,14 @@ Ketik *8* untuk menutup sesi layanan.`);
   }
 
   async datasatistik(request) {
-    const user = request.from;
+    const user = request.number;
     if (allowedSessions.has(user)) return;
     const submenu = [f("menu.statistikSosial"), f("menu.statistikEkonomi"), f("menu.statistikLingkungan")];
     return this.replyWithFooter(`📊 *Data Statistik Berdasarkan Kategori*\n\nSilakan pilih kategori dengan mengetik sesuai menu yang tersedia.\nContoh : *221*\n\n${submenu.map((m, i) => `*22${i + 1}*. ${m}`).join("\n")}`);
   }
 
   async statistikSosial(request) {
-    const user = request.from;
+    const user = request.number;
     if (allowedSessions.has(user)) return;
   const submenu = [
     "Kependudukan dan Migrasi",
@@ -141,7 +141,7 @@ Ketik 22 untuk kembali ke daftar kategori Data Statistik.`
 }
 
 async sosialKependudukan(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -167,7 +167,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async sosialTenagaKerja(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -193,7 +193,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async sosialPendidikan(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -219,7 +219,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async sosialKesehatan(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -245,7 +245,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async sosialKonsumsi(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -271,7 +271,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async sosialPerlindungan(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -297,7 +297,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async sosialPemukiman(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -323,7 +323,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async sosialKriminal(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -349,7 +349,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async sosialBudaya(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -375,7 +375,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async sosialPolitik(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -401,7 +401,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async sosialWaktu(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -428,7 +428,7 @@ Ketik *8* untuk menutup sesi layanan.`
 
 
   async statistikEkonomi(request) {
-    const user = request.from;
+    const user = request.number;
     if (allowedSessions.has(user)) return;
   const submenu = [
     "Statistik Makroekonomi",
@@ -457,7 +457,7 @@ Ketik 22 untuk kembali ke daftar kategori Data Statistik.`);
 }
 
 async ekonomiMakro(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -483,7 +483,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async ekonomiNeraca(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -509,7 +509,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async ekonomiBisnis(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -535,7 +535,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async ekonomiSektoral(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -561,7 +561,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async ekonomiKeuanganPublik(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -587,7 +587,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async ekonomiPerdagangan(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -613,7 +613,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async ekonomiHarga(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -639,7 +639,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async ekonomiTenagaKerja(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -665,7 +665,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async ekonomiIptek(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -691,7 +691,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async ekonomiPertanian(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -717,7 +717,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async ekonomiEnergi(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -743,7 +743,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async ekonomiIndustri(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -769,7 +769,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async ekonomiTransportasi(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -795,7 +795,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async ekonomiPariwisata(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -821,7 +821,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async ekonomiFinansial(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -848,7 +848,7 @@ Ketik *8* untuk menutup sesi layanan.`
 
 
   async statistikLingkungan(request) {
-    const user = request.from;
+    const user = request.number;
     if (allowedSessions.has(user)) return;
   const submenu = [
     "Lingkungan",
@@ -872,7 +872,7 @@ Ketik 22 untuk kembali ke daftar kategori Data Statistik.`);
 }
 
 async lingkungan(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -898,7 +898,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async regionalAreaKecil(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -924,7 +924,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async multiDomain(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -950,7 +950,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async bukuTahunan(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -976,7 +976,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async kemiskinanLintasSektor(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -1002,7 +1002,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async genderKhusus(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -1028,7 +1028,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async masyarakatInformasi(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -1054,7 +1054,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async globalisasi(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -1080,7 +1080,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async mdgs(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -1106,7 +1106,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async berkelanjutan(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -1132,7 +1132,7 @@ Ketik *8* untuk menutup sesi layanan.`
 }
 
 async kewirausahaan(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -1159,7 +1159,7 @@ Ketik *8* untuk menutup sesi layanan.`
 
 
   async konsultasi(request) {
-  const user = request.from;
+  const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -1187,7 +1187,7 @@ apabila Sahabat Data ingin berkonsultasi secara daring langsung melalui BPS Pusa
 }
 
   async rekomendasiSektoral(request) {
-     const user = request.from;
+     const user = request.number;
   const name = request.name;
   const number = request.number;
   if (allowedSessions.has(user)) return;
@@ -1224,7 +1224,7 @@ Ketik *8* untuk menutup sesi layanan.`);
   }
 
   async faq(request) {
-  const user = request.from;
+  const user = request.number;
   if (allowedSessions.has(user)) return;
 
   return this.replyWithFooter(`❓ *Pertanyaan yang Sering Diajukan (FAQ)*
@@ -1251,7 +1251,7 @@ Ketik *8* untuk menutup sesi layanan.`);
 
 
 async faqApaItuBPS(request) {
-  const user = request.from;
+  const user = request.number;
   if (allowedSessions.has(user)) return;
 return this.replyWithFooter(`🏢 *Apa itu BPS dan apa tugasnya?*
 
@@ -1272,7 +1272,7 @@ Ketik *8* untuk menutup sesi layanan.`);
 }
 
 async faqLayananBPS(request) {
-  const user = request.from;
+  const user = request.number;
   if (allowedSessions.has(user)) return;
   return this.replyWithFooter(`📌 *Apa saja layanan yang disediakan BPS?*
 
@@ -1303,7 +1303,7 @@ Ketik *8* untuk menutup sesi layanan.`);
 }
 
 async faqAksesData(request) {
-   const user = request.from;
+   const user = request.number;
   if (allowedSessions.has(user)) return;
   return this.replyWithFooter(`📊 *Bagaimana cara mendapatkan data dari BPS?*
 
@@ -1332,7 +1332,7 @@ Ketik *8* untuk menutup sesi layanan.`);
 }
 
 async faqBiayaData(request) {
-     const user = request.from;
+     const user = request.number;
   if (allowedSessions.has(user)) return;
   return this.replyWithFooter(`💰 *Berapa biaya untuk permintaan data di BPS?*
 
@@ -1345,7 +1345,7 @@ Ketik *8* untuk menutup sesi layanan.`);
 }
 
 async faqKepahiangDalamAngka(request) {
-  const user = request.from;
+  const user = request.number;
   if (allowedSessions.has(user)) return;
   return this.replyWithFooter(`📘 *Apa itu publikasi “Kepahiang Dalam Angka”?*
 
@@ -1367,7 +1367,7 @@ Ketik *8* untuk menutup sesi layanan.`);
 }
 
 async faqPerbedaanSensus(request) {
-  const user = request.from;
+  const user = request.number;
   if (allowedSessions.has(user)) return;
   return this.replyWithFooter(`📊 *Apa bedanya Sensus, Survei, dan Registrasi?*
 
@@ -1388,7 +1388,7 @@ Ketik *8* untuk menutup sesi layanan.`);
 }
 
 async faqPerbedaanData(request) {
-    const user = request.from;
+    const user = request.number;
   if (allowedSessions.has(user)) return;
   return this.replyWithFooter(`📊 *Kenapa data saya berbeda dengan data BPS?*
 
@@ -1415,7 +1415,7 @@ Ketik *8* untuk menutup sesi layanan.`);
 }
 
 async faqTidakMenemukanData(request) {
-    const user = request.from;
+    const user = request.number;
   if (allowedSessions.has(user)) return;
   return this.replyWithFooter(`🔍 *Tidak menemukan data yang dicari?*
 
@@ -1435,7 +1435,7 @@ Ketik *8* untuk menutup sesi layanan.`);
 }
 
 async faqPenggunaanData(request) {
-      const user = request.from;
+      const user = request.number;
   if (allowedSessions.has(user)) return;
   return this.replyWithFooter(`📚 *Apakah data BPS boleh digunakan untuk tugas, laporan, atau publikasi ilmiah?*
 
@@ -1458,7 +1458,7 @@ Ketik *8* untuk menutup sesi layanan.`);
 }
 
 async faqLowonganMagang(request) {
-        const user = request.from;
+        const user = request.number;
   if (allowedSessions.has(user)) return;
   return this.replyWithFooter(`🧑‍💼 *Apakah BPS membuka lowongan kerja, magang, atau kunjungan edukatif?*
 
@@ -1478,7 +1478,7 @@ Ketik *8* untuk menutup sesi layanan.`);
 }
 
 async faqKonsultasi(request) {
-  const user = request.from;
+  const user = request.number;
   if (allowedSessions.has(user)) return;
   return this.replyWithFooter(`🤝 *Apakah bisa konsultasi langsung dengan petugas statistik?*
 
@@ -1502,7 +1502,7 @@ Ketik *8* untuk menutup sesi layanan.`);
 
 
   async janjitemu(request) {
-    const user = request.from;
+    const user = request.number;
     if (allowedSessions.has(user)) return;
     return this.replyWithFooter(`📅 *Janji Temu Pelayanan Statistik*
 
@@ -1513,7 +1513,7 @@ untuk memulai proses koordinasi.`);
   }
 
   async pengaduan(request) {
-    const user = request.from;
+    const user = request.number;
     if (allowedSessions.has(user)) return;
     return this.replyWithFooter(`📢 *Layanan Pengaduan*
 
@@ -1537,7 +1537,7 @@ Ketik *8* untuk menutup sesi layanan.`);
   }
 
   async selesaimenu(request) {
-    const user = request.from;
+    const user = request.number;
     if (allowedSessions.has(user)) return;
     await this.replyWithFooter(`🎉 *Terima Kasih telah menggunakan layanan Tikko!*
 
@@ -1554,8 +1554,7 @@ Sampai jumpa di layanan berikutnya!`);
     const userNumber = request.number;
     const userName = request.name;
     const petugasNumber = "62895413640333"; // Tanpa @c.us, pepesan handle otomatis
-  const user = request.from;
-  if (allowedSessions.has(user)) return;
+  if (allowedSessions.has(userNumber)) return;
     console.log("[HUBUNGI PETUGAS] Permintaan dari:", userNumber);
 
     // 1. Balas ke user
@@ -1586,8 +1585,7 @@ Mohon tunggu sebentar, Sahabat Data sedang dihubungkan dengan petugas statistik 
     const userNumber = request.number;
     const userName = request.name;
     const petugasNumber = "62895366006564"; // Tanpa @c.us, pepesan handle otomatis
-const user = request.from;
-  if (allowedSessions.has(user)) return;
+  if (allowedSessions.has(userNumber)) return;
     console.log("[HUBUNGI PETUGAS] Permintaan dari:", userNumber);
 
     // 1. Balas ke user
@@ -1618,7 +1616,7 @@ Silakan balas dengan format lengkap agar kami dapat menjadwalkan janji temu Anda
     }
 
     // 3. Tambahkan ke sesi aktif agar tidak di-auto-reply
-    allowedSessions.add(request.from);
+    allowedSessions.add(request.userNumber);
     console.log("[HUBUNGI PETUGAS] Sesi aktif sekarang:", [...allowedSessions]);
 
 
@@ -1650,7 +1648,7 @@ Tikko sudah kembali ke mode auto-reply dan siap membantu kebutuhan statistik Sah
 }
 
 async selesai2(request) {
-  const from = request.from;
+  const from = request.number;
 
   // Hapus dari sesi konsultasi agar bisa auto-reply lagi
   const wasInSession = allowedSessions.delete(from);
