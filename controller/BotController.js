@@ -35,6 +35,7 @@ module.exports = class BotController extends Controller {
 
 
   async menu(request) {
+    console.log("User yang mengakses [menu]:", request.from);
     const user = request.from;
     if (allowedSessions.has(user)) return;
 
