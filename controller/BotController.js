@@ -36,7 +36,7 @@ module.exports = class BotController extends Controller {
 
   async menu(request) {
     console.log("User yang mengakses [menu]:", request.from);
-    const user = request.from;
+    const user = request.number;
     if (allowedSessions.has(user)) return;
 
     const daftarMenu = [
@@ -1578,7 +1578,7 @@ Mohon tunggu sebentar, Sahabat Data sedang dihubungkan dengan petugas statistik 
     }
 
     // 3. Tambahkan ke sesi aktif agar tidak di-auto-reply
-    allowedSessions.add(request.from);
+    allowedSessions.add(request.userNumber);
     console.log("[HUBUNGI PETUGAS] Sesi aktif sekarang:", [...allowedSessions]);
   }
 
@@ -1626,10 +1626,10 @@ Silakan balas dengan format lengkap agar kami dapat menjadwalkan janji temu Anda
 
 
   async selesai(request) {
-  const from = request.from;
+  const from = request.number;
 
   // Hapus dari sesi konsultasi agar bisa auto-reply lagi
-  const wasInSession = allowedSessions.delete(from);
+  const wasInSession = allowedSessions.delete(form);
   console.log("[SELESAI] Autoreply diaktifkan kembali untuk:", from);
 
   if (wasInSession) {
