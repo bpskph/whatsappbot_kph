@@ -1159,15 +1159,7 @@ Ketik *8* untuk menutup sesi layanan.`
 
   async konsultasi(request) {
   const user = request.number;
-  const name = request.name;
-  const number = request.number;
   if (allowedSessions.has(user)) return;
-
-  await logToSheet({
-    name,
-    number,
-    menu: "Layanan Konsultasi"
-  });
 
   return this.replyWithFooter (`🤝 *Layanan Konsultasi Statistik*
 
@@ -1624,12 +1616,21 @@ Silakan balas dengan format lengkap agar kami dapat menjadwalkan janji temu Anda
 
   async selesai(request) {
   const from = request.number;
+  const name = request.name;
+  const number = request.number;
 
   // Hapus dari sesi konsultasi agar bisa auto-reply lagi
   const wasInSession = allowedSessions.delete(from);
   console.log("[SELESAI] Autoreply diaktifkan kembali untuk:", from);
 
   if (wasInSession) {
+
+  await logToSheet({
+    name,
+    number,
+    menu: "Layanan Konsultasi"
+  });
+
     return `✅ *Sesi konsultasi telah ditutup.*
 
 Terima kasih, *Sahabat Data*, atas percakapannya bersama PeTik (Petugas Statistik). 
