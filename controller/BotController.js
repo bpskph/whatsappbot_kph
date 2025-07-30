@@ -82,17 +82,17 @@ Jam Pelayanan : 08.00-15.00 WIB
     `)}
 
   async publikasi(request) {
-    const user = request.from;
+    const user = request.number;
     if (allowedSessions.has(user)) return;
     return this.replyWithFooter(`📚 Publikasi Statistik BPS Kabupaten Kepahiang
 
 Berikut beberapa publikasi terbaru yang paling sering diakses:
 
-*1.* Kabupaten Kepahiang Dalam Angka 2025
+1. Kabupaten Kepahiang Dalam Angka 2025
 🔗 https://s.bps.go.id/KepahiangDalamAngka2025
-*2.* Indeks Pembangunan Manusia 2023
+2. Indeks Pembangunan Manusia 2023
 🔗 https://s.bps.go.id/IPMKepahiang2025
-*3.* Indikator Strategis Kabupaten Kepahiang 2023
+3. Indikator Strategis Kabupaten Kepahiang 2023
 🔗 https://s.bps.go.id/IndikatorStartegisKepahiang2023
 
 Lihat semua publikasi dan unduh versi lengkapnya di:
@@ -1553,7 +1553,7 @@ Sampai jumpa di layanan berikutnya!`);
     const userNumber = request.number;
     const userName = request.name;
     const petugasNumber = "62895413640333"; // Tanpa @c.us, pepesan handle otomatis
-  if (allowedSessions.has(userNumber)) return;
+
     console.log("[HUBUNGI PETUGAS] Permintaan dari:", userNumber);
 
     // 1. Balas ke user
@@ -1568,7 +1568,7 @@ Mohon tunggu sebentar, Sahabat Data sedang dihubungkan dengan petugas statistik 
   📱 Nomor : ${userNumber}
   
   Pengguna memerlukan bantuan terkait statistik melalui *Tikko*.
-  Mohon segera ditindaklanjuti melalui *Tikko*.`
+  Mohon segera ditindaklanjuti melalui WA Web.`
       ]);
       console.log("[HUBUNGI PETUGAS] Notifikasi berhasil dikirim.");
     } catch (err) {
@@ -1576,7 +1576,7 @@ Mohon tunggu sebentar, Sahabat Data sedang dihubungkan dengan petugas statistik 
     }
 
     // 3. Tambahkan ke sesi aktif agar tidak di-auto-reply
-    allowedSessions.add(request.userNumber);
+    allowedSessions.add(request.number);
     console.log("[HUBUNGI PETUGAS] Sesi aktif sekarang:", [...allowedSessions]);
   }
 
@@ -1584,7 +1584,7 @@ Mohon tunggu sebentar, Sahabat Data sedang dihubungkan dengan petugas statistik 
     const userNumber = request.number;
     const userName = request.name;
     const petugasNumber = "62895366006564"; // Tanpa @c.us, pepesan handle otomatis
-  if (allowedSessions.has(userNumber)) return;
+
     console.log("[HUBUNGI PETUGAS] Permintaan dari:", userNumber);
 
     // 1. Balas ke user
@@ -1607,7 +1607,7 @@ Silakan balas dengan format lengkap agar kami dapat menjadwalkan janji temu Anda
   📱 Nomor : ${userNumber}
   
   Pengguna mengajukan janji temu melalui *Tikko*.,
-  Mohon bantu konfirmasi waktu dan keperluan layanan melalui *Tikko*.`
+  Mohon bantu konfirmasi waktu dan keperluan layanan melalui WA Web.`
       ]);
       console.log("[HUBUNGI PETUGAS] Notifikasi berhasil dikirim.");
     } catch (err) {
@@ -1615,10 +1615,10 @@ Silakan balas dengan format lengkap agar kami dapat menjadwalkan janji temu Anda
     }
 
     // 3. Tambahkan ke sesi aktif agar tidak di-auto-reply
-    allowedSessions.add(request.userNumber);
+    allowedSessions.add(request.number);
     console.log("[HUBUNGI PETUGAS] Sesi aktif sekarang:", [...allowedSessions]);
 
-
+    return "Kamu telah terhubung ke petugas.";
   }
 
 
@@ -1637,12 +1637,12 @@ Terima kasih, *Sahabat Data*, atas percakapannya bersama PeTik (Petugas Statisti
 Untuk membantu kami meningkatkan kualitas layanan dan penyediaan data, mohon luangkan waktu untuk mengisi *Survei Kebutuhan Data* melalui tautan berikut:
 🔗 https://s.bps.go.id/SKD2025_1708
 
-Tikko kini kembali ke mode auto-reply dan siap membantu kebutuhan statistik Sahabat Data berikutnya.`;
+Tikko kini kembali ke mode auto-reply dan siap membantu kebutuhan statistik Anda berikutnya.`;
 
   } else {
     return `ℹ️ *Saat ini tidak ada sesi konsultasi yang aktif.*
 
-Tikko sudah kembali ke mode auto-reply dan siap membantu kebutuhan statistik Sahabat Data.`;
+Tikko sudah kembali ke mode auto-reply dan siap membantu kebutuhan statistik Anda berikutnya.`;
   }
 }
 
@@ -1658,12 +1658,12 @@ async selesai2(request) {
 
 Terima kasih, *Sahabat Data*, atas waktunya untuk berkoordinasi bersama PeTik (Petugas Statistik).
 
-Tikko kini kembali ke mode auto-reply dan siap membantu keperluan statistik Sahabat Data berikutnya.`;
+Tikko kini kembali ke mode auto-reply dan siap membantu keperluan statistik Anda berikutnya.`;
 
   } else {
     return `ℹ️ *Saat ini tidak ada sesi koordinasi janji temu yang aktif.*
 
-Tikko sudah dalam mode auto-reply dan siap membantu kebutuhan statistik Sahabat Data.`;
+Tikko sudah kembali ke mode auto-reply dan siap membantu kebutuhan statistik Anda berikutnya.`;
   }
 }
 
