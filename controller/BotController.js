@@ -36,7 +36,7 @@ module.exports = class BotController extends Controller {
 
   async menu(request) {
     console.log("User yang mengakses [menu]:", request.from);
-    const user = request.form;
+    const user = request.number;
     if (allowedSessions.has(user)) return;
 
     const daftarMenu = [
@@ -1551,7 +1551,7 @@ Sampai jumpa di layanan berikutnya!`);
   }
 
   async hubungiPetugas(request) {
-    const userNumber = request.form;
+    const userNumber = request.number;
     const userName = request.name;
     const petugasNumber = "62895413640333"; // Tanpa @c.us, pepesan handle otomatis
   if (allowedSessions.has(userNumber)) return;
@@ -1624,7 +1624,7 @@ Silakan balas dengan format lengkap agar kami dapat menjadwalkan janji temu Anda
 
 
   async selesai(request) {
-  const from = request.form;
+  const from = request.number;
 
   // Hapus dari sesi konsultasi agar bisa auto-reply lagi
   const wasInSession = allowedSessions.delete(form);
