@@ -1627,7 +1627,7 @@ Silakan balas dengan format lengkap agar kami dapat menjadwalkan janji temu Anda
   const from = request.number;
 
   // Hapus dari sesi konsultasi agar bisa auto-reply lagi
-  const wasInSession = allowedSessions.delete(form);
+  const wasInSession = allowedSessions.delete(from);
   console.log("[SELESAI] Autoreply diaktifkan kembali untuk:", from);
 
   if (wasInSession) {
