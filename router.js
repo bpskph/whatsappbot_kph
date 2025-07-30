@@ -22,47 +22,47 @@ router.keyword("222", [BotController, "statistikEkonomi"]);
 router.keyword("223", [BotController, "statistikLingkungan"]);
 
 // Submenu Statistik Sosial (Statistik Demografi dan Sosial)
-router.keyword("2311", [BotController, "sosialKependudukan"]);
-router.keyword("2312", [BotController, "sosialTenagaKerja"]);
-router.keyword("2313", [BotController, "sosialPendidikan"]);
-router.keyword("2314", [BotController, "sosialKesehatan"]);
-router.keyword("2315", [BotController, "sosialKonsumsi"]);
-router.keyword("2316", [BotController, "sosialPerlindungan"]);
-router.keyword("2317", [BotController, "sosialPemukiman"]);
-router.keyword("2318", [BotController, "sosialKriminal"]);
-router.keyword("2319", [BotController, "sosialBudaya"]);
-router.keyword("23110", [BotController, "sosialPolitik"]);
-router.keyword("23111", [BotController, "sosialWaktu"]);
+router.keyword("2211", [BotController, "sosialKependudukan"]);
+router.keyword("2212", [BotController, "sosialTenagaKerja"]);
+router.keyword("2213", [BotController, "sosialPendidikan"]);
+router.keyword("2214", [BotController, "sosialKesehatan"]);
+router.keyword("2215", [BotController, "sosialKonsumsi"]);
+router.keyword("2216", [BotController, "sosialPerlindungan"]);
+router.keyword("2217", [BotController, "sosialPemukiman"]);
+router.keyword("2218", [BotController, "sosialKriminal"]);
+router.keyword("2219", [BotController, "sosialBudaya"]);
+router.keyword("22110", [BotController, "sosialPolitik"]);
+router.keyword("22111", [BotController, "sosialWaktu"]);
 
 // Submenu Statistik Ekonomi
-router.keyword("2321", [BotController, "ekonomiMakro"]);
-router.keyword("2322", [BotController, "ekonomiNeraca"]);
-router.keyword("2323", [BotController, "ekonomiBisnis"]);
-router.keyword("2324", [BotController, "ekonomiSektoral"]);
-router.keyword("2325", [BotController, "ekonomiKeuanganPublik"]);
-router.keyword("2326", [BotController, "ekonomiPerdagangan"]);
-router.keyword("2327", [BotController, "ekonomiHarga"]);
-router.keyword("2328", [BotController, "ekonomiTenagaKerja"]);
-router.keyword("2329", [BotController, "ekonomiIptek"]);
-router.keyword("23210", [BotController, "ekonomiPertanian"]);
-router.keyword("23211", [BotController, "ekonomiEnergi"]);
-router.keyword("23212", [BotController, "ekonomiIndustri"]);
-router.keyword("23213", [BotController, "ekonomiTransportasi"]);
-router.keyword("23214", [BotController, "ekonomiPariwisata"]);
-router.keyword("23215", [BotController, "ekonomiFinansial"]);
+router.keyword("2221", [BotController, "ekonomiMakro"]);
+router.keyword("2222", [BotController, "ekonomiNeraca"]);
+router.keyword("2223", [BotController, "ekonomiBisnis"]);
+router.keyword("2224", [BotController, "ekonomiSektoral"]);
+router.keyword("2225", [BotController, "ekonomiKeuanganPublik"]);
+router.keyword("2226", [BotController, "ekonomiPerdagangan"]);
+router.keyword("2227", [BotController, "ekonomiHarga"]);
+router.keyword("2228", [BotController, "ekonomiTenagaKerja"]);
+router.keyword("2229", [BotController, "ekonomiIptek"]);
+router.keyword("22210", [BotController, "ekonomiPertanian"]);
+router.keyword("22211", [BotController, "ekonomiEnergi"]);
+router.keyword("22212", [BotController, "ekonomiIndustri"]);
+router.keyword("22213", [BotController, "ekonomiTransportasi"]);
+router.keyword("22214", [BotController, "ekonomiPariwisata"]);
+router.keyword("22215", [BotController, "ekonomiFinansial"]);
 
 // Submenu Statistik Lingkungan & Multidomain
-router.keyword("2331", [BotController, "lingkungan"]);
-router.keyword("2332", [BotController, "regionalAreaKecil"]);
-router.keyword("2333", [BotController, "multiDomain"]);
-router.keyword("2334", [BotController, "bukuTahunan"]);
-router.keyword("2335", [BotController, "kemiskinanLintasSektor"]);
-router.keyword("2336", [BotController, "genderKhusus"]);
-router.keyword("2337", [BotController, "masyarakatInformasi"]);
-router.keyword("2338", [BotController, "globalisasi"]);
-router.keyword("2339", [BotController, "mdgs"]);
-router.keyword("23310", [BotController, "berkelanjutan"]);
-router.keyword("23311", [BotController, "kewirausahaan"]);
+router.keyword("2231", [BotController, "lingkungan"]);
+router.keyword("2232", [BotController, "regionalAreaKecil"]);
+router.keyword("2233", [BotController, "multiDomain"]);
+router.keyword("2234", [BotController, "bukuTahunan"]);
+router.keyword("2235", [BotController, "kemiskinanLintasSektor"]);
+router.keyword("2236", [BotController, "genderKhusus"]);
+router.keyword("2237", [BotController, "masyarakatInformasi"]);
+router.keyword("2238", [BotController, "globalisasi"]);
+router.keyword("2239", [BotController, "mdgs"]);
+router.keyword("22310", [BotController, "berkelanjutan"]);
+router.keyword("22311", [BotController, "kewirausahaan"]);
 
 // FAQ (Pertanyaan yang Sering Diajukan)
 router.keyword("51", [BotController, "faqApaItuBPS"]);
